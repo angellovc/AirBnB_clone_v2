@@ -18,8 +18,11 @@ def do_deploy(archive_path):
             folder_name
         ))
         run('rm /tmp/{}'.format(file_name))
-        run('mv /data/web_static/releases/{}/web_static/*\
-        /data/web_static/releases/{}'.format(folder_name, folder_name))
+        run('mv {}/{}/web_static/* /data/web_static/releases/{}'.format(
+            '/data/web_static/releases',
+            folder_name,
+            folder_name
+            ))
         run('rm -rf /data/web_static/releases/{}/web_static'.format(
             folder_name
             ))
