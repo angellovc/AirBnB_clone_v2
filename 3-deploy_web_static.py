@@ -15,7 +15,9 @@ def deploy():
     if result is None:
         return False
     else:
-        return do_deploy(result)
+        file_name = result.__dict__['command']
+        file_name = file_name.split(' ')[-2]
+        return do_deploy(file_name)
 
 
 def do_deploy(archive_path):
