@@ -23,8 +23,8 @@ class State(BaseModel, Base):
             """ getter to cities asociated with the current state """
             from models import storage
             cities = []
-            objects = storage.all("City")
+            objects = storage.all(City)
             for obj in objects.values():
-                if City == type(obj) and obj.state_id == self.id:
+                if isinstance(obj, City) is True and obj.state_id == self.id:
                     cities.append(obj)
             return cities
