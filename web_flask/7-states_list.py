@@ -14,11 +14,15 @@ app.jinja_env.lstrip_blocks = True
 
 @app.route('/states_list')
 def states_list():
-    return render_template('7-states_list.html', states=storage.all(State).values())
+    """ display State objects present in DBStorage  """
+    return render_template(
+        '7-states_list.html',
+        states=storage.all(State).values())
 
 
 @app.teardown_appcontext
 def teardown_appcontext(error):
+    """ remove the current SQLAlchemy Session After each request """
     storage.close()
 
 if __name__ == '__main__':
