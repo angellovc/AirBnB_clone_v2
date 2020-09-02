@@ -14,7 +14,7 @@ class FileStorage:
         show = {}
         if cls:
             for obj in objects:
-                if type(objects[obj]) == cls:
+                if isinstance(objects[obj], cls):
                     show[obj] = objects[obj]
             return show
         else:
