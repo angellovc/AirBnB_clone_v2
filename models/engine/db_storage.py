@@ -73,4 +73,4 @@ class DBStorage:
 
     def close(self):
         """ update some part of our engine """
-        self.__session.close()
+        self.__session.remove()
