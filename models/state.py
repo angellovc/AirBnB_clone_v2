@@ -27,4 +27,4 @@ class State(BaseModel, Base):
             for obj in objects.values():
                 if City == type(obj) and obj.state_id == self.id:
                     cities.append(obj)
-            return obj
+            return cities
